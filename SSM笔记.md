@@ -806,6 +806,25 @@ public String pathVarible(@PathVariable("id") Long id) {
 
 ### 拦截器
 
-- preHandle方法：在处理器之前执行的前置方法，这样Spring MVC可以在进入处理器前处理一些方法论。他将返回一个boolean值，会影响到后面Spring MVC的流程
-- postHandle方法：在处理器之后执行的后置方法，处理器的逻辑完成后运行它。
-- afterCompletion方法：无论是否产生异常都会在渲染视图后执行的方法。
+- **preHandle方法**：在处理器之前执行的前置方法，这样Spring MVC可以再进入处理器前处理一些方法。他将返回一个boolean值，会影响到后面Spring MVC的流程
+- **postHandle方法**：在处理器之后执行的后置方法，处理器的逻辑完成后运行它。
+- **afterCompletion方法**：无论是否产生异常都会在渲染视图后执行的方法。
+
+## JSR 303注解验证输入内容
+
+| 注解                      | 详细信息                                                 |
+| ------------------------- | -------------------------------------------------------- |
+| @Null                     | 被注释的元素必须为Null                                   |
+| @NotNull                  | 被注是的元素必须部位Null                                 |
+| @AssertTrue               | 被注解的元素必须为true                                   |
+| @Asserfalse               | 被注解的元素必须为false                                  |
+| @Min(value)               | 被注解的元素必须是一个数字，其值必须大于等于指定的最小值 |
+| @max(value)               | 被注解的元素必须是一个数字，其值必须大于等于指定的最大值 |
+| @DecimalMin(value)        | 被注解的元素必须是一个数字，其值必须小于等于指定的最小值 |
+| @DecimalMax(value)        | 被注释的元素必须是一个数字，其值必须大于等于指定的最大值 |
+| @Size(max,min)            | 被注释的元素的大小必须在制定的范围内                     |
+| @Digits(integer,fraction) | 被注释的元素必须是一个数字，其值必须在可接受的范围内     |
+| @Past                     | 被注释的元素必须是一个过去的日期                         |
+| @Future                   | 被注释的元素必须是一个将来的日期                         |
+| @Pattern(value)           | 被注释的元素必须符合制定的正则表达式                     |
+
